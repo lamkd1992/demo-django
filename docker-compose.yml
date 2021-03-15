@@ -9,7 +9,7 @@ services:
       MYSQL_USER: dockeruser
       MYSQL_PASSWORD: 123456
     ports:
-      - 3410:3306
+      - 3411:3306
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
