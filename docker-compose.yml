@@ -1,0 +1,21 @@
+version: "3.3"
+   
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: djdocker
+      MYSQL_USER: dockeruser
+      MYSQL_PASSWORD: 123456
+    ports:
+      - 3410:3306
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
