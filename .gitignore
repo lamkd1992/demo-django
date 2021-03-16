@@ -1,2 +1,2 @@
 .vscode
-/mysite/__pycache__
+__pycache__/
